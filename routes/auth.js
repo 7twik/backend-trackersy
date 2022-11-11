@@ -49,8 +49,8 @@ router.get("/google", passport.authenticate("google", ["profile", "email"]));
 router.get(
 	"/google/callback",
 	passport.authenticate("google",{
-		successRedirect: process.env.CLIENT_URL,
-		failureRedirect: "/login/failed",
+		successRedirect: "https://www.google.com/",
+		failureRedirect: "https://www.bing.com/ck/a?!&&p=732b7991ec121c45JmltdHM9MTY2ODEyNDgwMCZpZ3VpZD0zMzEyNGY4YS1jNTNlLTYxNWEtMTA4ZC01ZTMxYzQzODYwMjgmaW5zaWQ9NTE5MA&ptn=3&hsh=3&fclid=33124f8a-c53e-615a-108d-5e31c4386028&psq=instagram&u=a1aHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS8&ntb=1",
 	})
 );
 

@@ -31,7 +31,12 @@ app.use(passport.session());
 //		credentials: true,
 //	})
 //);
-app.use(cors()) //and this
+app.use(cors({
+		Access-Control-Allow-Credentials:true
+		Access-Control-Allow-Headers:x-requested-with, origin, content-type, accept, Proxy-Connection
+		Access-Control-Allow-Methods:GET,POST,PUT,OPTIONS, DELETE
+		Access-Control-Allow-Origin:"https://trackersy.onrender.com"
+})) //and this
 
 // app.get('/user/:id', function (req, res, next) {
 //   res.json({user: 'CORS enabled'})

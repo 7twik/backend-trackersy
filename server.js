@@ -54,34 +54,6 @@ app.use("/auth", authRoute);
 app.use("",routes);
 
 
-// const __dirname1 = path.resolve();
-
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static(path.join(__dirname1, "/frontend/build")));
-
-//   app.get("/", (req, res) =>
-//   res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
-// );
-// app.get("/Home", (req, res) =>
-//   res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
-// );
-// app.get("/Admin", (req, res) =>
-//   res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
-// );
-// app.get("/Adminz", (req, res) =>
-//   res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
-// );
-// app.get("/Cart", (req, res) =>
-//   res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
-// );
-// app.get("/Register", (req, res) =>
-//   res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
-// );
-// } else {
-//   app.get("/", (req, res) => {
-//     res.send("API is running..");
-//   });
-// }
 
 
 const port = process.env.PORT || 8080;

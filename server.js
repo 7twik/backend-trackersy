@@ -10,7 +10,7 @@ const bp = require('body-parser')
 const routes=require("./routes/route");
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb+srv://7twik:zKqW0UzgQO3G3iMy@cluster0.sjxr9uv.mongodb.net/Trackersy" ,()=> console.log("connected to db"));
+mongoose.connect(process.env.MONGODB_URI ,()=> console.log("connected to db"));
 app.use(bp.json())
 app.use(bp.urlencoded({ extended: true }))
 app.use(
@@ -37,15 +37,15 @@ const corsOptions = {
     optionSuccessStatus: 200
 }
 
-app.use(cors(corsOptions));
+//app.use(cors(corsOptions));
 
-app.use(function (req, res, next) {
-    res.header('Access-Control-Allow-Origin', "https://trackersy.onrender.com");
-    res.header('Access-Control-Allow-Headers', true);
-    res.header('Access-Control-Allow-Credentials', true);
-    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    next();
-});
+//app.use(function (req, res, next) {
+  //  res.header('Access-Control-Allow-Origin', "https://trackersy.onrender.com");
+    //res.header('Access-Control-Allow-Headers', true);
+//    res.header('Access-Control-Allow-Credentials', true);
+  //  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    //next();
+//});
 
 // app.get('/user/:id', function (req, res, next) {
 //   res.json({user: 'CORS enabled'})

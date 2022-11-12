@@ -31,12 +31,21 @@ app.use(passport.session());
 //		credentials: true,
 //	})
 //);
-app.use(cors({
-		Access-Control-Allow-Credentials:true
-		Access-Control-Allow-Headers:x-requested-with, origin, content-type, accept, Proxy-Connection
-		Access-Control-Allow-Methods:GET,POST,PUT,OPTIONS, DELETE
-		Access-Control-Allow-Origin:"https://trackersy.onrender.com"
-})) //and this
+const corsOptions = {
+    origin: 'http://localhost:3000/',
+    credentials: true,
+    optionSuccessStatus: 200
+}
+
+app.use(cors(corsOptions));
+
+app.use(function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', "http://localhost:3000");
+    res.header('Access-Control-Allow-Headers', true);
+    res.header('Access-Control-Allow-Credentials', true);
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    next();
+});
 
 // app.get('/user/:id', function (req, res, next) {
 //   res.json({user: 'CORS enabled'})

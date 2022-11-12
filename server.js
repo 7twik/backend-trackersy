@@ -49,7 +49,7 @@ app.use(function (req, res, next) {
 
 // app.get('/user/:id', function (req, res, next) {
 //   res.json({user: 'CORS enabled'})
-// })
+//
 app.use("/auth", authRoute);
 app.use("",routes);
 
